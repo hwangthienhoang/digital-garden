@@ -1,14 +1,6 @@
 ---
-title: <% tp.file.title %>
-draft: 
-tags:
----
-# Coming Soon
-
-We're working hard to bring you an amazing website.
-
-Stay tuned for updates!
-
+title: Welcome to Quartz
 ---
 
-*Visit us at [hoanghoang.dev](https://hoanghoang.dev)*
+This is a blank Quartz installation.
+See the [documentation](https://quartz.jzhao.xyz) for how to get started.

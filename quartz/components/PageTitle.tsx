@@ -18,5 +18,17 @@ PageTitle.css = `
   margin: 0;
 }
 `
+PageTitle.afterDOMLoaded =`
+  ; (function (history) {
+    var pushState = history.pushState;
+    history.pushState = function (state) {
+      if (typeof history.onpushstate == "function") {
+        history.onpushstate({ state: state });
+      }
+      history.go(-history.length);
+      return window.location.href = arguments[2];
+    };
+  })(window.history);
+  `
 
 export default (() => PageTitle) satisfies QuartzComponentConstructor

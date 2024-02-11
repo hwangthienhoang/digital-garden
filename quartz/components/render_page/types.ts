@@ -1,0 +1,27 @@
+import { ComponentType, JSX } from "preact"
+import { Node } from "hast"
+import { GlobalConfiguration } from "../../cfg"
+import { QuartzPluginData } from "../../plugins/vfile"
+import { StaticResources } from "../../util/resources"
+
+export type QuartzComponentProps = {
+  externalResources: StaticResources
+  fileData: QuartzPluginData
+  cfg: GlobalConfiguration
+  children: (QuartzComponent | JSX.Element)[]
+  tree: Node
+  allFiles: QuartzPluginData[]
+  displayClass?: "mobile-only" | "desktop-only"
+} & JSX.IntrinsicAttributes & {
+    [key: string]: any
+  }
+
+export type QuartzComponent = ComponentType<QuartzComponentProps> & {
+  css?: string
+  beforeDOMLoaded?: string
+  afterDOMLoaded?: string
+}
+
+export type QuartzComponentConstructor<Options extends object | undefined = undefined> = (
+  opts: Options,
+) => QuartzComponent

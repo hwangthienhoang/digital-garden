@@ -2,7 +2,6 @@ import { QuartzEmitterPlugin } from "../types"
 import { QuartzComponentProps } from "../../components/types"
 import HeaderConstructor from "../../components/Header"
 import BodyConstructor from "../../components/Body"
-import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { FilePath, joinSegments, pathToRoot } from "../../util/path"
 import { defaultContentPageLayout, sharedPageComponents } from "../../../quartz.layout"
@@ -10,6 +9,7 @@ import { Content } from "../../components"
 import chalk from "chalk"
 import { write } from "./helpers"
 import DepGraph from "../../depgraph"
+import { pageResources, renderPage } from "../../components/render_page/renderPage"
 
 export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOpts) => {
   const opts: FullPageLayout = {

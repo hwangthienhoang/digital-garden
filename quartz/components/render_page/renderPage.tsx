@@ -216,7 +216,7 @@ export function renderPage(
       <body data-slug={slug} class="vsc-initialized">
         <div id="__docusaurus">
           <Body {...componentData}>
-            <div page-section="top">
+            <div page-section="top" class="navbar--fixed-top">
               <Header {...componentData}>
                 {header.map((HeaderComponent) => (
                   <HeaderComponent {...componentData} />
@@ -226,7 +226,19 @@ export function renderPage(
 
             <div class="Wrapper_ReNv main-docs-wrapper" page-section="center">
               <div class="docPage_3AUJ">
-                {LeftComponent}
+                <aside class="docSidebarContainer_2LAn">
+                  <div class="sidebar_15mo sidebarWithHideableNavbar_267A">
+                    <a tabindex="-1" class="sidebarLogo_3h0W" href="/">
+                      <img
+                        src="/static/img/logo.svg"
+                        alt="HoangHoang Logo"
+                        class="themedImage_1VuW themedImage--dark_hz6m"
+                      />
+                      <b> </b>
+                    </a>
+                    {LeftComponent}
+                  </div>
+                </aside>
                 <main class="docMainContainer_2AUC">
                   <div class="padding-vert--lg container docItemWrapper_1WZa">
                     <div class="row">

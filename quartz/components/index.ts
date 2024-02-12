@@ -19,6 +19,7 @@ import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
 import Nav from "./nav/Nav"
+import Tree from "./tree/Tree"
 
 export {
   ArticleTitle,
@@ -42,4 +43,5 @@ export {
   NotFound,
   Breadcrumbs,
   Nav,
+  Tree,
 }

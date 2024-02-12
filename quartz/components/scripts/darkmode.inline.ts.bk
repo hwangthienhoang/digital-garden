@@ -1,14 +1,6 @@
 const userPref = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"
 const currentTheme = localStorage.getItem("theme") ?? userPref
 document.documentElement.setAttribute("saved-theme", currentTheme)
-window.addEventListener(
-  "DOMContentLoaded",
-  function () {
-    document.querySelector("#darkmode-toggle-wrapper").className =
-      currentTheme === "dark" ? "toggle_71bT toggleChecked_2FvV" : "toggle_71bT"
-  },
-  true,
-)
 
 const emitThemeChangeEvent = (theme: "light" | "dark") => {
   const event: CustomEventMap["themechange"] = new CustomEvent("themechange", {
@@ -21,8 +13,6 @@ document.addEventListener("nav", () => {
   const switchTheme = (e: Event) => {
     const newTheme = (e.target as HTMLInputElement)?.checked ? "dark" : "light"
     document.documentElement.setAttribute("saved-theme", newTheme)
-    document.querySelector("#darkmode-toggle-wrapper").className =
-      newTheme === "dark" ? "toggle_71bT toggleChecked_2FvV" : "toggle_71bT"
     localStorage.setItem("theme", newTheme)
     emitThemeChangeEvent(newTheme)
   }
@@ -38,9 +28,6 @@ document.addEventListener("nav", () => {
   // Darkmode toggle
   const toggleSwitch = document.querySelector("#darkmode-toggle") as HTMLInputElement
   toggleSwitch.addEventListener("change", switchTheme)
-  document.querySelector("#darkmode-toggle-wrapper").addEventListener("click", function(){
-    toggleSwitch.click()
-  })
   window.addCleanup(() => toggleSwitch.removeEventListener("change", switchTheme))
   if (currentTheme === "dark") {
     toggleSwitch.checked = true

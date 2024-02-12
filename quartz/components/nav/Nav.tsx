@@ -23,174 +23,151 @@ export default ((opts?: Partial<NavOptions>) => {
           <div className="navbar__items">
             <a className="navbar__brand" href="/">
               <div className="navbar__logo">
-                <img
-                  src="/static/img/logo.svg"
-                  alt="HoangHoang Logo"
-                  className=""
-                />
+                <img src="/static/img/logo.svg" alt="HoangHoang Logo" className="" />
               </div>
               <b className="navbar__title"> </b>
             </a>
-            <div className="navbar__item dropdown dropdown--hoverable">
-              <a href="#" className="navbar__link">
-                Get Started
+            <div class="navbar__item dropdown dropdown--hoverable">
+              <a href="#" class="navbar__link">
+                Cheat sheets
               </a>
-              <ul className="dropdown__menu">
+              <ul class="dropdown__menu">
                 <li>
-                  <a
-                    aria-current="page"
-                    className="dropdown__link dropdown__link--active"
-                    href="/docs/installation/"
-                  >
-                    Installation
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown__link" href="/docs/quick-start/react/">
-                    React
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown__link" href="/docs/style-guide/">
-                    Style Guide
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown__link" href="/docs/examples/">
-                    Examples
+                  <a class="dropdown__link" href="/cheatsheets/Powershell">
+                    Powershell
                   </a>
                 </li>
               </ul>
             </div>
-            <div className="navbar__item dropdown dropdown--hoverable">
-              <a href="#" className="navbar__link">
+            <div class="navbar__item dropdown dropdown--hoverable">
+              <a href="#" class="navbar__link">
                 Community
               </a>
-              <ul className="dropdown__menu">
+              <ul class="dropdown__menu">
                 <li>
                   <a
-                    href="https://github.com/agile-ts/agile"
+                    href="https://github.com/hwangthienhoang/digital-garden"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="dropdown__link"
+                    class="dropdown__link"
                   >
                     <span>
                       GitHub
                       <svg
-                        width={12}
-                        height={12}
+                        width="12"
+                        height="12"
                         aria-hidden="true"
                         viewBox="0 0 24 24"
-                        className="iconExternalLink_3J9K"
+                        class="iconExternalLink_3J9K"
                       >
                         <path
                           fill="currentColor"
                           d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
-                        />
+                        ></path>
                       </svg>
                     </span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://discord.gg/T9GzreAwPH"
+                    href="https://discord.gg"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="dropdown__link"
+                    class="dropdown__link"
                   >
                     <span>
                       Discord
                       <svg
-                        width={12}
-                        height={12}
+                        width="12"
+                        height="12"
                         aria-hidden="true"
                         viewBox="0 0 24 24"
-                        className="iconExternalLink_3J9K"
+                        class="iconExternalLink_3J9K"
                       >
                         <path
                           fill="currentColor"
                           d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
-                        />
+                        ></path>
                       </svg>
                     </span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://stackoverflow.com/questions/tagged/agile-ts"
+                    href="https://stackoverflow.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="dropdown__link"
+                    class="dropdown__link"
                   >
                     <span>
                       Stack Overflow
                       <svg
-                        width={12}
-                        height={12}
+                        width="12"
+                        height="12"
                         aria-hidden="true"
                         viewBox="0 0 24 24"
-                        className="iconExternalLink_3J9K"
+                        class="iconExternalLink_3J9K"
                       >
                         <path
                           fill="currentColor"
                           d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
-                        />
+                        ></path>
                       </svg>
                     </span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://twitter.com/AgileFramework"
+                    href="https://twitter.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="dropdown__link"
+                    class="dropdown__link"
                   >
                     <span>
                       Twitter
                       <svg
-                        width={12}
-                        height={12}
+                        width="12"
+                        height="12"
                         aria-hidden="true"
                         viewBox="0 0 24 24"
-                        className="iconExternalLink_3J9K"
+                        class="iconExternalLink_3J9K"
                       >
                         <path
                           fill="currentColor"
                           d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
-                        />
+                        ></path>
                       </svg>
                     </span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://www.reddit.com/r/AgileTs/"
+                    href="https://www.reddit.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="dropdown__link"
+                    class="dropdown__link"
                   >
                     <span>
                       Reddit
                       <svg
-                        width={12}
-                        height={12}
+                        width="12"
+                        height="12"
                         aria-hidden="true"
                         viewBox="0 0 24 24"
-                        className="iconExternalLink_3J9K"
+                        class="iconExternalLink_3J9K"
                       >
                         <path
                           fill="currentColor"
                           d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
-                        />
+                        ></path>
                       </svg>
                     </span>
                   </a>
                 </li>
               </ul>
             </div>
-            <a className="navbar__item navbar__link" href="/docs/introduction">
-              Documentation
+            <a className="navbar__item navbar__link" href="/posts/introduction">
+              Introduction
             </a>
           </div>
           <div className="navbar__items navbar__items--right">

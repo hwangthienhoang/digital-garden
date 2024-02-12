@@ -35,6 +35,26 @@ Ready to dive into the world of coding, learning, and community? Start your jour
 
 Thank you for choosing [hoanghoang.dev](https://hoanghoang.dev). We look forward to being a valuable resource on your coding adventure.
 
+#### Coding
+<div class="codeBlockTitle_eoMF" style="color: rgb(248, 248, 242); background-color: rgb(40, 42, 54);">store.ts</div>
+
+```typescript
+import { createCollection } from "@trg/core";
+
+export interface TodoItemInterface {
+  id: number;
+  text: string;
+  done: boolean;
+}
+
+```
+
+#### 👾Table
+| Header 1 | Header 2 |
+| -------- | -------- |
+| Item 1   | 34       |
+| Item 2   | 34343    | 
+
 Happy coding!
 
 [hoanghoang.dev](https://github.com/hwangthienhoang/digital-garden)

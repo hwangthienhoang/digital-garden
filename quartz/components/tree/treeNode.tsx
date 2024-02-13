@@ -48,12 +48,32 @@ function sanitizeTreeData(allFiles: QuartzPluginData[]): TreeNode[] {
     .sort((a, b) => a.slug.split("/").length - b.slug.split("/").length)
 }
 
+// `a/b/c/d` is child of `a/b/c`, but not `a/b`
 function isChildPath(childPath: string = "", parentPath: string = "") {
   // Ensure input is path not slug
   const childSegments = slugToPath(childPath).split("/")
   const parentSegments = slugToPath(parentPath).split("/")
 
-  if (childSegments.length <= parentSegments.length) {
+  if (childSegments.length != parentSegments.length + 1) {
+    return false
+  }
+
+  for (let i = 0; i < parentSegments.length; i++) {
+    if (childSegments[i] !== parentSegments[i]) {
+      return false
+    }
+  }
+
+  return true
+}
+
+// `a/b/c/d` isDirectDescendants of `a/b/c` or `a/b`
+function isDirectDescendants(childPath: string = "", parentPath: string = "") {
+  // Ensure input is path not slug
+  const childSegments = slugToPath(childPath).split("/")
+  const parentSegments = slugToPath(parentPath).split("/")
+
+  if (childSegments.length != parentSegments.length + 1) {
     return false
   }
 
@@ -103,8 +123,9 @@ export function generateLineageNodes(
   const lineageNodes = sanitizeTreeData(lineageFiles)
 
   const output: TreeNode[] = lineageNodes.map((v) => {
-    v.isExpanded = isChildPath(currentFile?.slug, v.slug)
-    v.isHighlighted = slugToPath(currentFile.slug) == v.path || isChildPath(currentFile?.slug, v.slug)
+    v.isExpanded = isDirectDescendants(currentFile?.slug, v.slug)
+    v.isHighlighted =
+      slugToPath(currentFile.slug) == v.path || isDirectDescendants(currentFile?.slug, v.slug)
     return v
   })
 
@@ -119,8 +140,8 @@ export function generateLineageNodes(
             slug: accumulator,
             path: accumulator,
             depth: accumulator.split("/").length,
-            isExpanded: isChildPath(currentFile?.slug, accumulator),
-            isHighlighted: isChildPath(currentFile?.slug, accumulator),
+            isExpanded: isDirectDescendants(currentFile?.slug, accumulator),
+            isHighlighted: isDirectDescendants(currentFile?.slug, accumulator),
           })
         }
       }
@@ -134,20 +155,30 @@ export function generateLineageNodes(
 
 // Build only from 1 node
 export function treeNodeComponent({ node }: treeNodeProps) {
+  
   const liClass = !!node?.children?.length
     ? `theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-${node.depth} menu__list-item ${!node.isExpanded ? "menu__list-item--collapsed" : ""}`
     : `theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-${node.depth} menu__list-item`
-
+  
   return (
     <li class={liClass}>
       {!node?.children?.length ? (
-        <a className={!node?.isHighlighted? "menu__link" : "menu__link menu__link--active"} href={join("/", node.slug)}>
+        <a
+          className={!node?.isHighlighted ? "menu__link" : "menu__link menu__link--active"}
+          href={join("/", node.slug)}
+        >
           {node.title}
         </a>
       ) : (
         <>
-          <div className="menu__list-item-collapsible">
-            <a href="#" class={"menu__link menu__link--sublist " +`${!!node.isHighlighted ? "menu__link--active" : ""}`}>
+          <div className="menu__list-item-collapsible" data-path={node.path}>
+            <a
+              href="#"
+              class={
+                "menu__link menu__link--sublist " +
+                `${!!node.isHighlighted ? "menu__link--active" : ""}`
+              }
+            >
               {node.title}
             </a>
           </div>

@@ -6,7 +6,7 @@ export default (() => {
   function Tree({ fileData, allFiles }: QuartzComponentProps) {
     const lineageNodes = generateLineageNodes(allFiles, fileData)
     const treeData = buildTreeData(lineageNodes)
-
+    
     return (
       <nav class="menu thin-scrollbar menu_Bmed">
         <ul class="theme-doc-sidebar-menu menu__list">

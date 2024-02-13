@@ -3,9 +3,10 @@ longform:
   format: scenes
   title: posts
   workflow: Default Workflow
-  sceneFolder: /
+  sceneFolder: general
   scenes:
     - introduction
+    - react
   sceneTemplate: templates/page.md
   ignoredFiles: []
 ---

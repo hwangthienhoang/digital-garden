@@ -1,2 +1,2 @@
-# Digital garden
-Coming soon with vuepress
+# digital-garden
+A VuePress project

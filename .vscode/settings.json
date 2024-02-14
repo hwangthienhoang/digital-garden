@@ -51,5 +51,8 @@
     "zoomable"
   ],
   "eslint.nodePath": ".yarn/sdks",
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs"
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  }
 }

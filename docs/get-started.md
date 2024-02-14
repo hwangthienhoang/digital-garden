@@ -14,6 +14,27 @@ Every markdown file [will be rendered to HTML, then converted to a Vue SFC][cont
 
 VuePress support basic markdown syntax and [some extensions][synatex-extensions], you can also [use Vue features][vue-feature] in it.
 
+## Coding
+
+```typescript
+export const HomeHeroImage = defineComponent({
+  name: 'HomeHeroImage',
+  setup(props) {
+    return () =>
+      h(
+        'div',
+        {
+          class: ['hero-img ', isChanged.value ? 'jumping' : ''],
+          onClick: doToggle,
+          onMouseenter: doToggle,
+          // onMouseleave: setReady,
+        },
+        toggleState.value ? h(AstronautBlack) : h(AstronautWhite),
+      )
+  },
+})
+```
+
 ## Configuration
 
 VuePress use a `.vuepress/config.js`(or .ts) file as [site configuration][config], you can use it to config your site.

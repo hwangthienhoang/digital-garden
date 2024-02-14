@@ -1,7 +1,7 @@
 :root {
   // brand colors
-  --c-brand: #3eaf7c;
-  --c-brand-light: #4abf8a;
+  --c-brand: #6c69a0;
+  --c-brand-light: #9c9abf;
 
   // background colors
   --c-bg: #ffffff;
@@ -84,9 +84,9 @@
   --font-family-code: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
   // layout vars
-  --navbar-height: 3.6rem;
-  --navbar-padding-v: 0.7rem;
-  --navbar-padding-h: 1.5rem;
+  --navbar-height: 5rem;
+  --navbar-padding-v: calc(1rem * 0.5);
+  --navbar-padding-h: 0;
   --sidebar-width: 20rem;
   --sidebar-width-mobile: calc(var(--sidebar-width) * 0.82);
   --content-width: 740px;

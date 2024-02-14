@@ -1,0 +1,221 @@
+@import '_variables';
+
+.navbar {
+  --navbar-line-height: calc(
+    var(--navbar-height) - 2 * var(--navbar-padding-v)
+  );
+  // position: sticky;
+
+  padding: var(--navbar-padding-v) var(--navbar-padding-h);
+  line-height: var(--navbar-line-height);
+
+  .logo {
+    height: var(--navbar-line-height);
+    margin-right: var(--navbar-padding-v);
+    vertical-align: top;
+  }
+
+  .site-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--c-text);
+    position: relative;
+    display: none !important;
+  }
+
+  .navbar-items-wrapper {
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 100%;
+    position: static;
+    font-size: 1rem;
+    .search-box {
+      flex: 0 0 auto;
+      vertical-align: top;
+    }
+  }
+}
+
+@media screen and (max-width: $MQMobile) {
+  .navbar {
+    padding-left: 4rem;
+
+    .site-name {
+      display: block;
+      // 5.5rem for .navbar padding-inline
+      // 4.5rem for ColorModeSwitch and NavbarSearch
+      // 1rem for gap
+      width: calc(100vw - 11rem);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .can-hide {
+      display: none;
+    }
+  }
+}
+
+/**
+ * navbar-items
+ */
+.navbar-items {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+
+  &--right {
+    flex: 0 0 auto;
+    justify-content: flex-end;
+  }
+
+  @media print {
+    display: none;
+  }
+
+  a {
+    display: inline-block;
+    line-height: 1.4rem;
+    color: inherit;
+
+    &:hover,
+    &.route-link-active {
+      color: var(--c-text);
+    }
+  }
+
+  .navbar-item {
+    position: relative;
+    display: inline-block;
+    margin-left: 1.5rem;
+    line-height: var(--navbar-line-height);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    > a {
+      &:hover,
+      &.route-link-active {
+        margin-bottom: -2px;
+        border-bottom: 2px solid var(--c-text-accent);
+      }
+    }
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .navbar-items {
+    .navbar-item {
+      margin-left: 0;
+
+      > a {
+        &:hover,
+        &.route-link-active {
+          margin-bottom: 0;
+          border-bottom: none;
+        }
+      }
+    }
+
+    a {
+      &:hover,
+      &.route-link-active {
+        color: var(--c-text-accent);
+      }
+    }
+  }
+}
+
+/**
+ * toggle sidebar button
+ */
+.toggle-sidebar-button {
+  position: absolute;
+  top: 0.6rem;
+  left: 1rem;
+  display: none;
+  padding: 0.6rem;
+  cursor: pointer;
+}
+
+.toggle-sidebar-button .icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: inherit;
+
+  span {
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--c-text);
+    transition: transform var(--t-transform);
+
+    &:nth-child(2) {
+      margin: 6px 0;
+    }
+  }
+}
+
+@media screen and (max-width: $MQMobile) {
+  .toggle-sidebar-button {
+    display: block;
+  }
+}
+
+/**
+ * toggle color mode button
+ */
+.toggle-color-mode-button {
+  display: flex;
+  margin: auto;
+  margin-left: 1rem;
+  border: 0;
+  background: none;
+  color: var(--c-text);
+  opacity: 0.8;
+  cursor: pointer;
+
+  @media print {
+    display: none;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.DocSearch {
+  transition: background-color var(--t-color);
+}
+
+/**
+ * toggle color mode button
+ */
+.progressbar {
+  background-color: #fff;
+  bottom: 0;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+
+  &--process {
+    background-color: var(--c-brand);
+    height: 1px;
+  }
+}

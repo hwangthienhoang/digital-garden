@@ -44,6 +44,8 @@
     "stylelint": "^16.2.1",
     "tsconfig-vuepress": "^4.5.0",
     "typescript": "^5.3.3",
+    "vite": "^5.1.1",
+    "vitest": "^1.2.2",
     "vue": "^3.4.19",
     "vuepress": "^2.0.0-rc.7"
   }

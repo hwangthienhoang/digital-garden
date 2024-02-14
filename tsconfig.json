@@ -8,6 +8,7 @@
   },
   "include": [
     "**/.vuepress/**/*",
+    "**/resources/**/*",
     "e2e/**/*",
     "plugins/**/*",
     "themes/**/*",

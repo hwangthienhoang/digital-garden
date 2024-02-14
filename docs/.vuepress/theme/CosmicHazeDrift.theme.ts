@@ -16,10 +16,7 @@ export const CosmicHazeDriftTheme = (options: DefaultThemeOptions): Theme => {
 
     // override component alias
     alias: {
-      // '@theme/HomeFooter.vue': path.resolve(
-      //   __dirname,
-      //   './components/MyHomeFooter.vue',
-      // ),
+      '@theme/Navbar.vue': path.resolve(__dirname, './components/Navbar.vue'),
     },
   }
 }

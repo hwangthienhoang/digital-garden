@@ -348,6 +348,8 @@ __metadata:
     eslint-plugin-n: "npm:^16.6.2"
     eslint-plugin-promise: "npm:^6.1.1"
     eslint-plugin-vue: "npm:^9.21.1"
+    markdown-it: "npm:^14.0.0"
+    markdown-it-mark: "npm:^4.0.0"
     prettier: "npm:^3.2.5"
     prettier-config-vuepress: "npm:^4.4.0"
     sass: "npm:^1.70.0"
@@ -4255,6 +4257,13 @@ __metadata:
   version: 3.0.0
   resolution: "markdown-it-emoji@npm:3.0.0"
   checksum: 10c0/e2bca9cfbf0e7e652c00c91450e88017ce4b66a84c25130aa2da6c7013fc3d51ed70715565807d4607c1967ca224edbbc231523b80b0a56436efad5feb6e2666
+  languageName: node
+  linkType: hard
+
+"markdown-it-mark@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "markdown-it-mark@npm:4.0.0"
+  checksum: 10c0/58fa2220bb3beb911af2490dae70a1e11e8ba39f8b9ba825b2ecd8188878fe73875b504eb8a8ece6e75d94df5aa3fcfae4eaca5384aecd4da853a290069b952e
   languageName: node
   linkType: hard
 

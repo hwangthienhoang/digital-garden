@@ -1,10 +1,16 @@
 @import '_variables';
 
 .home {
-  padding: var(--navbar-height) 2rem 0;
-  max-width: var(--homepage-width);
-  margin: 0px auto;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  max-width: max-content;
+  mark {
+    background: none;
+    color: var(--c-text-accent);
+  }
 
   .hero {
     display: flex;
@@ -12,6 +18,8 @@
     padding: 10rem 0 16rem;
     transition: padding 0.1s cubic-bezier(0.17, 0.67, 0.83, 0.67);
     width: 95%;
+    max-width: var(--home-hero-width);
+    text-align: left;
 
     .hero-item {
       &--right {
@@ -44,38 +52,45 @@
     }
 
     h1 {
-      font-size: 3rem;
+      color: var(--c-text);
+      font-size: 2.25rem;
+      font-weight: 400;
+      transition: font-size 0.1s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+      margin: 0 0 1rem 0;
     }
 
-    h1,
-    .description,
-    .actions {
-      margin: 1.8rem auto;
+    .description {
+      color: var(--c-text-lightest);
+      max-width: 30rem;
+      font-size: 1.5rem;
+      line-height: 1.3;
+      color: var(--c-text-lightest);
+      margin: 0;
     }
 
     .actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
+      flex-direction: row;
 
-    .description {
-      max-width: 35rem;
-      font-size: 1.6rem;
-      line-height: 1.3;
-      color: var(--c-text-lightest);
+      & > * {
+        flex: 1 1 0;
+      }
     }
 
     .action-button {
-      display: inline-block;
-      font-size: 1.2rem;
-      padding: 0.8rem 1.6rem;
-      border-width: 2px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      padding: 15px 30px;
+      border-width: 0;
       border-style: solid;
-      border-radius: 4px;
+      border-radius: 3px;
+      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
       transition: background-color var(--t-color);
       box-sizing: border-box;
+      text-align: center;
 
       &.primary {
         color: var(--c-bg);
@@ -94,6 +109,19 @@
           color: var(--c-bg);
           background-color: var(--c-brand-light);
         }
+      }
+    }
+    .github-button {
+      background-color: #262630;
+      color: #fff;
+
+      & > .github_svg {
+        margin-bottom: -2px;
+        margin-right: 10px;
+        font-size: 18px;
+      }
+      & .external-link-icon {
+        display: none;
       }
     }
   }
@@ -139,6 +167,21 @@
     text-align: center;
     color: var(--c-text-lighter);
     transition: border-color var(--t-color);
+  }
+  // override typewriter
+  .typewriter-container {
+    --c-cursor: var(--c-text-accent);
+    .typewriter-text {
+      font-size: 64px;
+    }
+    .cursor {
+      height: 4rem;
+      margin-top: 10px;
+      width: 0.6rem;
+    }
+    .typed-text {
+      color: var(--c-text);
+    }
   }
 }
 

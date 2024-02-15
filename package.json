@@ -50,6 +50,9 @@
     "vuepress": "^2.0.0-rc.7"
   },
   "dependencies": {
-    "@vueuse/core": "^10.7.2"
+    "@vueuse/core": "^10.7.2",
+    "markdown-it": "^14.0.0",
+    "markdown-it-mark": "^4.0.0",
+    "vue": "^3.4.19"
   }
 }

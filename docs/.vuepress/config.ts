@@ -6,7 +6,8 @@ export default defineUserConfig({
   lang: 'en-US',
 
   title: 'HoangHoang.dev',
-  description: 'Digital garden Site',
+  description:
+    'Empowering Code, Sharing Knowledge: Your IT Hub for Tips, Tricks, and Tech News!',
   head: [
     [
       'link',

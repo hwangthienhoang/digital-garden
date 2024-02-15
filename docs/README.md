@@ -1,7 +1,9 @@
 ---
 home: true
 title: Home
+heroText: For a coding ==experience==
 heroImage: /images/astronaut-white.svg
+tagline: 'Empowering Code, Sharing Knowledge: \nYour IT Hub for Tips, Tricks, and Tech News !'
 actions:
   - text: Get Started
     link: /getting-started.html
@@ -9,7 +11,7 @@ actions:
 
   - text: Github
     link: https://github.com/hwangthienhoang/digital-garden
-    type: secondary
+    type: github-button
 
 features:
   - title: Simplicity First

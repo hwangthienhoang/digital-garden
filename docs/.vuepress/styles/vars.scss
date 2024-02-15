@@ -18,7 +18,7 @@
   --c-text-accent: var(--c-brand);
   --c-text-light: #3a5169;
   --c-text-lighter: #4e6e8e;
-  --c-text-lightest: #6a8bad;
+  --c-text-lightest: #9c9abf;
   --c-text-quote: #999999;
 
   // border colors
@@ -90,7 +90,7 @@
   --sidebar-width: 20rem;
   --sidebar-width-mobile: calc(var(--sidebar-width) * 0.82);
   --content-width: 740px;
-  --homepage-width: 960px;
+  --home-hero-width: 1140px;
 }
 
 // plugin-back-to-top
@@ -179,4 +179,9 @@ body {
 
   --search-item-text-color: var(--c-text-lighter);
   --search-item-focus-bg-color: var(--c-bg-light);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-brand) var(--c-bg-darker);
 }

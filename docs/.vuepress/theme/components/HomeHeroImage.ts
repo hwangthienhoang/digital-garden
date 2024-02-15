@@ -6,8 +6,8 @@ import {
   shallowRef,
   Transition,
 } from 'vue'
-import AstronautWhite from '../resources/AstronautWhite.vue'
-import AstronautBlack from '../resources/AstronautBlack.vue'
+import AstronautWhiteSvg from '../resources/AstronautWhiteSvg.vue'
+import AstronautBlackSvg from '../resources/AstronautBlackSvg.vue'
 import { ref } from 'vue'
 
 const toggleState = ref(false)
@@ -41,7 +41,7 @@ export const HomeHeroImage = defineComponent({
           onMouseenter: doToggle,
           // onMouseleave: setReady,
         },
-        toggleState.value ? h(AstronautBlack) : h(AstronautWhite),
+        toggleState.value ? h(AstronautBlackSvg) : h(AstronautWhiteSvg),
       )
   },
 })
